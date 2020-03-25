@@ -1,0 +1,197 @@
+Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+42
+2997
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+adder4
+# storage
+db|adder4.(0).cnf
+db|adder4.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+successive.vhd
+62cba6499eed288dbc681c2ad1215d4e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+..|quartusii 9.0|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+adder4
+# storage
+db|adder4.(2).cnf
+db|adder4.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+successive.vhd
+62cba6499eed288dbc681c2ad1215d4e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+system.vhd
+11fb64dab03a6979b9a5fe138e9696b6
+}
+# lmf
+..|quartusii 9.0|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+adder4
+# storage
+db|adder4.(3).cnf
+db|adder4.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+successive.vhd
+62cba6499eed288dbc681c2ad1215d4e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+system.vhd
+11fb64dab03a6979b9a5fe138e9696b6
+ahead.vhd
+f9c9886586b33fa7d2d742d138b738
+}
+# hierarchies {
+|
+}
+# lmf
+..|quartusii 9.0|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+adder1
+# storage
+db|adder4.(1).cnf
+db|adder4.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+adder1.vhd
+95b53aa3cd314fa1ec2a5cc9f799d121
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+adder1:fa0
+adder1:fa1
+adder1:fa2
+adder1:fa3
+}
+# lmf
+..|quartusii 9.0|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+half_adder
+# storage
+db|adder4.(4).cnf
+db|adder4.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+adder1.vhd
+95b53aa3cd314fa1ec2a5cc9f799d121
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+adder1:fa0|half_adder:u1
+adder1:fa1|half_adder:u1
+adder1:fa2|half_adder:u1
+adder1:fa3|half_adder:u1
+}
+# lmf
+..|quartusii 9.0|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# complete
+

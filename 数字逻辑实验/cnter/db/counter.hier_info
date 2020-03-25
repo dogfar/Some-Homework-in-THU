@@ -1,0 +1,61 @@
+|counter
+c_clk => D:u0.clk
+c_rst => t_rst.DATAA
+outh[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+outh[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+outh[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+outh[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+outh[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+outh[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+outh[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+outl[0] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+outl[1] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+outl[2] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+outl[3] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+outl[4] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+outl[5] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+outl[6] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter|D:u0
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter|D:u1
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter|D:u2
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter|D:u3
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter|D:u4
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter|D:u5
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+

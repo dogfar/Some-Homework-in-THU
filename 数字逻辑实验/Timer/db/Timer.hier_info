@@ -1,0 +1,104 @@
+|Timer
+c_clk => t[20].CLK
+c_clk => t[19].CLK
+c_clk => t[18].CLK
+c_clk => t[17].CLK
+c_clk => t[16].CLK
+c_clk => t[15].CLK
+c_clk => t[14].CLK
+c_clk => t[13].CLK
+c_clk => t[12].CLK
+c_clk => t[11].CLK
+c_clk => t[10].CLK
+c_clk => t[9].CLK
+c_clk => t[8].CLK
+c_clk => t[7].CLK
+c_clk => t[6].CLK
+c_clk => t[5].CLK
+c_clk => t[4].CLK
+c_clk => t[3].CLK
+c_clk => t[2].CLK
+c_clk => t[1].CLK
+c_clk => t[0].CLK
+c_clk => t_clk.CLK
+c_rst => t_rst.DATAA
+outh[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+outh[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+outh[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+outh[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+outh[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+outh[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+outh[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+outl[0] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+outl[1] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+outl[2] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+outl[3] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+outl[4] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+outl[5] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+outl[6] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+pause => t_clk.ENA
+pause => t[20].ENA
+pause => t[19].ENA
+pause => t[18].ENA
+pause => t[17].ENA
+pause => t[16].ENA
+pause => t[15].ENA
+pause => t[14].ENA
+pause => t[13].ENA
+pause => t[12].ENA
+pause => t[11].ENA
+pause => t[10].ENA
+pause => t[9].ENA
+pause => t[8].ENA
+pause => t[7].ENA
+pause => t[6].ENA
+pause => t[5].ENA
+pause => t[4].ENA
+pause => t[3].ENA
+pause => t[2].ENA
+pause => t[1].ENA
+pause => t[0].ENA
+
+
+|Timer|D:u0
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Timer|D:u1
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Timer|D:u2
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Timer|D:u3
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Timer|D:u4
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Timer|D:u5
+clk => tmp.CLK
+rst => tmp.ACLR
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+nq <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.227 ns
+From           : switches[3]
+To             : switchSync[3]
+From Clock     : --
+To Clock       : clk1M
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.858 ns
+From           : success[0]
+To             : leds[0]
+From Clock     : clk1M
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.235 ns
+From           : switches[1]
+To             : switchSync[1]
+From Clock     : --
+To Clock       : clk1M
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk1M'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 167.53 MHz ( period = 5.969 ns )
+From           : switchSync[0]
+To             : success[3]
+From Clock     : clk1M
+To Clock       : clk1M
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

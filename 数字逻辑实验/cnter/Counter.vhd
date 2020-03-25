@@ -1,0 +1,71 @@
+library IEEE ;
+use IEEE.STD_LOGIC_1164.ALL ;
+use IEEE.STD_LOGIC_ARITH.ALL ;
+use IEEE.STD_LOGIC_UNSIGNED.ALL ;
+
+entity Counter is
+	port(c_clk, c_rst: IN STD_LOGIC ;
+	outh, outl: OUT STD_LOGIC_VECTOR(6 downto 0)
+	) ;
+end Counter ;
+
+architecture bhvc of Counter is
+component D
+	port(clk, rst: IN STD_LOGIC ;
+		q, nq: OUT STD_LOGIC
+		) ;
+end component ;
+signal h, l:INTEGER range 0 to 9 := 0 ;
+signal q_v, nq_v: STD_LOGIC_VECTOR(5 downto 0);
+signal t_rst, t_clk: STD_LOGIC := '1' ;
+signal num : INTEGER range 0 to 60:= 0 ;
+
+begin 
+	u0: D port map(t_clk, t_rst, q_v(0), nq_v(0)) ;
+	u1: D port map(nq_v(0), t_rst, q_v(1), nq_v(1)) ;
+	u2: D port map(nq_v(1), t_rst, q_v(2), nq_v(2)) ;
+	u3: D port map(nq_v(2), t_rst, q_v(3), nq_v(3)) ;
+	u4: D port map(nq_v(3), t_rst, q_v(4), nq_v(4)) ;
+	u5: D port map(nq_v(4), t_rst, q_v(5), nq_v(5)) ;
+	
+	process(c_clk, c_rst)
+	begin
+		t_rst <= c_rst ;
+		t_clk <= c_clk ;
+		num <= CONV_INTEGER(q_v) ;
+		if(num > 59) then
+			t_rst <= '0' ;
+			num <= 0 ;
+		end if ;
+		h <= num / 10 ;
+		l <= num mod(10) ;
+		
+        case h is
+			when 0 => outh <= "1111110" ;
+			when 1 => outh <= "0110000" ;
+			when 2 => outh <= "1101101" ;
+			when 3 => outh <= "1111001" ;
+			when 4 => outh <= "0110011" ;
+			when 5 => outh <= "1011011" ;
+			when 6 => outh <= "0011111" ;
+			when 7 => outh <= "1110000" ;
+			when 8 => outh <= "1111111" ;
+			when 9 => outh <= "1110011" ;
+			when others => outh <= "0000000" ;
+		end case ;
+		
+        case l is
+			when 0 => outl <= "1111110" ;
+			when 1 => outl <= "0110000" ;
+			when 2 => outl <= "1101101" ;
+			when 3 => outl <= "1111001" ;
+			when 4 => outl <= "0110011" ;
+			when 5 => outl <= "1011011" ;
+			when 6 => outl <= "0011111" ;
+			when 7 => outl <= "1110000" ;
+			when 8 => outl <= "1111111" ;
+			when 9 => outl <= "1110011" ;
+			when others => outl <= "0000000" ;
+		end case ;		
+	end process ;
+end bhvc ;

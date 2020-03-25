@@ -1,0 +1,24 @@
+|problem3_4ch
+clk1M => switchSync[3].CLK
+clk1M => switchSync[2].CLK
+clk1M => switchSync[1].CLK
+clk1M => switchSync[0].CLK
+clk1M => btnLast.CLK
+clk1M => btnSync.CLK
+clk1M => mode.CLK
+clk1M => success[3].CLK
+clk1M => success[2].CLK
+clk1M => success[1].CLK
+clk1M => success[0].CLK
+clkBtn => btnSync.DATAIN
+rstBtn => mode~1.OUTPUTSELECT
+switches[0] => switchSync[0].DATAIN
+switches[1] => switchSync[1].DATAIN
+switches[2] => switchSync[2].DATAIN
+switches[3] => switchSync[3].DATAIN
+leds[0] <= success[0].DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= success[1].DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= success[2].DB_MAX_OUTPUT_PORT_TYPE
+leds[3] <= success[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

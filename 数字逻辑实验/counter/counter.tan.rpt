@@ -1,0 +1,643 @@
+Classic Timing Analyzer report for counter
+Tue May 07 21:05:22 2019
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                ;
++------------------------------+-------+---------------+----------------------------------+-------------------+-------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From              ; To                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------------+-------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.442 ns                         ; pause             ; chufa:tmp0|ten[3] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.660 ns                        ; chufa:tmp0|ten[0] ; ll[3]             ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.182 ns                        ; mode              ; chufa:tmp0|one[3] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 87.37 MHz ( period = 11.445 ns ) ; chufa:tmp0|cnt[5] ; chufa:tmp0|ten[3] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                   ;                   ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------------+-------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From               ; To                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 87.37 MHz ( period = 11.445 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 10.736 ns               ;
+; N/A                                     ; 87.37 MHz ( period = 11.445 ns )                    ; chufa:tmp0|cnt[5]  ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 10.736 ns               ;
+; N/A                                     ; 87.37 MHz ( period = 11.445 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 10.736 ns               ;
+; N/A                                     ; 87.37 MHz ( period = 11.445 ns )                    ; chufa:tmp0|cnt[5]  ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 10.736 ns               ;
+; N/A                                     ; 87.37 MHz ( period = 11.445 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 10.736 ns               ;
+; N/A                                     ; 87.37 MHz ( period = 11.445 ns )                    ; chufa:tmp0|cnt[5]  ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 10.736 ns               ;
+; N/A                                     ; 87.47 MHz ( period = 11.433 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 10.724 ns               ;
+; N/A                                     ; 87.47 MHz ( period = 11.433 ns )                    ; chufa:tmp0|cnt[5]  ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 10.724 ns               ;
+; N/A                                     ; 87.47 MHz ( period = 11.433 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 10.724 ns               ;
+; N/A                                     ; 87.47 MHz ( period = 11.433 ns )                    ; chufa:tmp0|cnt[5]  ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 10.724 ns               ;
+; N/A                                     ; 87.47 MHz ( period = 11.433 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 10.724 ns               ;
+; N/A                                     ; 87.47 MHz ( period = 11.433 ns )                    ; chufa:tmp0|cnt[5]  ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 10.724 ns               ;
+; N/A                                     ; 87.74 MHz ( period = 11.397 ns )                    ; chufa:tmp0|cnt[7]  ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 10.688 ns               ;
+; N/A                                     ; 87.74 MHz ( period = 11.397 ns )                    ; chufa:tmp0|cnt[7]  ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 10.688 ns               ;
+; N/A                                     ; 87.74 MHz ( period = 11.397 ns )                    ; chufa:tmp0|cnt[7]  ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 10.688 ns               ;
+; N/A                                     ; 87.83 MHz ( period = 11.385 ns )                    ; chufa:tmp0|cnt[7]  ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 10.676 ns               ;
+; N/A                                     ; 87.83 MHz ( period = 11.385 ns )                    ; chufa:tmp0|cnt[7]  ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 10.676 ns               ;
+; N/A                                     ; 87.83 MHz ( period = 11.385 ns )                    ; chufa:tmp0|cnt[7]  ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 10.676 ns               ;
+; N/A                                     ; 89.08 MHz ( period = 11.226 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 10.517 ns               ;
+; N/A                                     ; 89.08 MHz ( period = 11.226 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 10.517 ns               ;
+; N/A                                     ; 89.08 MHz ( period = 11.226 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 10.517 ns               ;
+; N/A                                     ; 89.17 MHz ( period = 11.214 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 10.505 ns               ;
+; N/A                                     ; 89.17 MHz ( period = 11.214 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 10.505 ns               ;
+; N/A                                     ; 89.17 MHz ( period = 11.214 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 10.505 ns               ;
+; N/A                                     ; 89.98 MHz ( period = 11.114 ns )                    ; chufa:tmp0|cnt[6]  ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 10.405 ns               ;
+; N/A                                     ; 89.98 MHz ( period = 11.114 ns )                    ; chufa:tmp0|cnt[6]  ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 10.405 ns               ;
+; N/A                                     ; 89.98 MHz ( period = 11.114 ns )                    ; chufa:tmp0|cnt[6]  ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 10.405 ns               ;
+; N/A                                     ; 90.07 MHz ( period = 11.102 ns )                    ; chufa:tmp0|cnt[6]  ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 10.393 ns               ;
+; N/A                                     ; 90.07 MHz ( period = 11.102 ns )                    ; chufa:tmp0|cnt[6]  ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 10.393 ns               ;
+; N/A                                     ; 90.07 MHz ( period = 11.102 ns )                    ; chufa:tmp0|cnt[6]  ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 10.393 ns               ;
+; N/A                                     ; 90.12 MHz ( period = 11.096 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 10.387 ns               ;
+; N/A                                     ; 90.12 MHz ( period = 11.096 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 10.387 ns               ;
+; N/A                                     ; 90.12 MHz ( period = 11.096 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 10.387 ns               ;
+; N/A                                     ; 90.22 MHz ( period = 11.084 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 10.375 ns               ;
+; N/A                                     ; 90.22 MHz ( period = 11.084 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 10.375 ns               ;
+; N/A                                     ; 90.22 MHz ( period = 11.084 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 10.375 ns               ;
+; N/A                                     ; 91.54 MHz ( period = 10.924 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 10.215 ns               ;
+; N/A                                     ; 91.54 MHz ( period = 10.924 ns )                    ; chufa:tmp0|cnt[5]  ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 10.215 ns               ;
+; N/A                                     ; 91.95 MHz ( period = 10.876 ns )                    ; chufa:tmp0|cnt[7]  ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 10.167 ns               ;
+; N/A                                     ; 92.60 MHz ( period = 10.799 ns )                    ; chufa:tmp0|cnt[15] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 10.090 ns               ;
+; N/A                                     ; 92.60 MHz ( period = 10.799 ns )                    ; chufa:tmp0|cnt[15] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 10.090 ns               ;
+; N/A                                     ; 92.60 MHz ( period = 10.799 ns )                    ; chufa:tmp0|cnt[15] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 10.090 ns               ;
+; N/A                                     ; 92.70 MHz ( period = 10.787 ns )                    ; chufa:tmp0|cnt[15] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 10.078 ns               ;
+; N/A                                     ; 92.70 MHz ( period = 10.787 ns )                    ; chufa:tmp0|cnt[15] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 10.078 ns               ;
+; N/A                                     ; 92.70 MHz ( period = 10.787 ns )                    ; chufa:tmp0|cnt[15] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 10.078 ns               ;
+; N/A                                     ; 93.41 MHz ( period = 10.705 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 9.996 ns                ;
+; N/A                                     ; 93.49 MHz ( period = 10.696 ns )                    ; chufa:tmp0|cnt[8]  ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 9.987 ns                ;
+; N/A                                     ; 93.49 MHz ( period = 10.696 ns )                    ; chufa:tmp0|cnt[8]  ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 9.987 ns                ;
+; N/A                                     ; 93.49 MHz ( period = 10.696 ns )                    ; chufa:tmp0|cnt[8]  ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 9.987 ns                ;
+; N/A                                     ; 93.60 MHz ( period = 10.684 ns )                    ; chufa:tmp0|cnt[8]  ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 9.975 ns                ;
+; N/A                                     ; 93.60 MHz ( period = 10.684 ns )                    ; chufa:tmp0|cnt[8]  ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 9.975 ns                ;
+; N/A                                     ; 93.60 MHz ( period = 10.684 ns )                    ; chufa:tmp0|cnt[8]  ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 9.975 ns                ;
+; N/A                                     ; 94.31 MHz ( period = 10.603 ns )                    ; chufa:tmp0|cnt[14] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 9.894 ns                ;
+; N/A                                     ; 94.31 MHz ( period = 10.603 ns )                    ; chufa:tmp0|cnt[14] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 9.894 ns                ;
+; N/A                                     ; 94.31 MHz ( period = 10.603 ns )                    ; chufa:tmp0|cnt[14] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 9.894 ns                ;
+; N/A                                     ; 94.40 MHz ( period = 10.593 ns )                    ; chufa:tmp0|cnt[6]  ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 9.884 ns                ;
+; N/A                                     ; 94.42 MHz ( period = 10.591 ns )                    ; chufa:tmp0|cnt[14] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 9.882 ns                ;
+; N/A                                     ; 94.42 MHz ( period = 10.591 ns )                    ; chufa:tmp0|cnt[14] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 9.882 ns                ;
+; N/A                                     ; 94.42 MHz ( period = 10.591 ns )                    ; chufa:tmp0|cnt[14] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 9.882 ns                ;
+; N/A                                     ; 94.56 MHz ( period = 10.575 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 9.866 ns                ;
+; N/A                                     ; 94.95 MHz ( period = 10.532 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 9.823 ns                ;
+; N/A                                     ; 94.95 MHz ( period = 10.532 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 9.823 ns                ;
+; N/A                                     ; 94.95 MHz ( period = 10.532 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 9.823 ns                ;
+; N/A                                     ; 94.95 MHz ( period = 10.532 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 9.823 ns                ;
+; N/A                                     ; 94.95 MHz ( period = 10.532 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 9.823 ns                ;
+; N/A                                     ; 94.95 MHz ( period = 10.532 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 9.823 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[14] ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[13] ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[15] ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 95.27 MHz ( period = 10.496 ns )                    ; chufa:tmp0|cnt[12] ; chufa:tmp0|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 96.96 MHz ( period = 10.313 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 9.604 ns                ;
+; N/A                                     ; 96.96 MHz ( period = 10.313 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 9.604 ns                ;
+; N/A                                     ; 96.96 MHz ( period = 10.313 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 9.604 ns                ;
+; N/A                                     ; 96.96 MHz ( period = 10.313 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 9.604 ns                ;
+; N/A                                     ; 96.96 MHz ( period = 10.313 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 9.604 ns                ;
+; N/A                                     ; 96.96 MHz ( period = 10.313 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 9.604 ns                ;
+; N/A                                     ; 97.19 MHz ( period = 10.289 ns )                    ; chufa:tmp0|cnt[22] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 9.580 ns                ;
+; N/A                                     ; 97.19 MHz ( period = 10.289 ns )                    ; chufa:tmp0|cnt[22] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 9.580 ns                ;
+; N/A                                     ; 97.19 MHz ( period = 10.289 ns )                    ; chufa:tmp0|cnt[22] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 9.580 ns                ;
+; N/A                                     ; 97.24 MHz ( period = 10.284 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 9.575 ns                ;
+; N/A                                     ; 97.24 MHz ( period = 10.284 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 9.575 ns                ;
+; N/A                                     ; 97.24 MHz ( period = 10.284 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 9.575 ns                ;
+; N/A                                     ; 97.24 MHz ( period = 10.284 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 9.575 ns                ;
+; N/A                                     ; 97.24 MHz ( period = 10.284 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 9.575 ns                ;
+; N/A                                     ; 97.24 MHz ( period = 10.284 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 9.575 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.278 ns )                    ; chufa:tmp0|cnt[15] ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 9.569 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[22] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[22] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[22] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[14] ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[13] ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[15] ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.30 MHz ( period = 10.277 ns )                    ; chufa:tmp0|cnt[10] ; chufa:tmp0|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 9.568 ns                ;
+; N/A                                     ; 97.45 MHz ( period = 10.262 ns )                    ; chufa:tmp0|cnt[9]  ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 9.553 ns                ;
+; N/A                                     ; 97.45 MHz ( period = 10.262 ns )                    ; chufa:tmp0|cnt[9]  ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 9.553 ns                ;
+; N/A                                     ; 97.45 MHz ( period = 10.262 ns )                    ; chufa:tmp0|cnt[9]  ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 9.553 ns                ;
+; N/A                                     ; 97.56 MHz ( period = 10.250 ns )                    ; chufa:tmp0|cnt[9]  ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 9.541 ns                ;
+; N/A                                     ; 97.56 MHz ( period = 10.250 ns )                    ; chufa:tmp0|cnt[9]  ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 9.541 ns                ;
+; N/A                                     ; 97.56 MHz ( period = 10.250 ns )                    ; chufa:tmp0|cnt[9]  ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 9.541 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[14] ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[13] ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[15] ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 97.58 MHz ( period = 10.248 ns )                    ; chufa:tmp0|cnt[19] ; chufa:tmp0|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 9.539 ns                ;
+; N/A                                     ; 98.03 MHz ( period = 10.201 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 9.492 ns                ;
+; N/A                                     ; 98.03 MHz ( period = 10.201 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 9.492 ns                ;
+; N/A                                     ; 98.03 MHz ( period = 10.201 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 9.492 ns                ;
+; N/A                                     ; 98.15 MHz ( period = 10.189 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 9.480 ns                ;
+; N/A                                     ; 98.15 MHz ( period = 10.189 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 9.480 ns                ;
+; N/A                                     ; 98.15 MHz ( period = 10.189 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 9.480 ns                ;
+; N/A                                     ; 98.20 MHz ( period = 10.183 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 9.474 ns                ;
+; N/A                                     ; 98.20 MHz ( period = 10.183 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 9.474 ns                ;
+; N/A                                     ; 98.20 MHz ( period = 10.183 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 9.474 ns                ;
+; N/A                                     ; 98.20 MHz ( period = 10.183 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 9.474 ns                ;
+; N/A                                     ; 98.20 MHz ( period = 10.183 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 9.474 ns                ;
+; N/A                                     ; 98.20 MHz ( period = 10.183 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 9.474 ns                ;
+; N/A                                     ; 98.28 MHz ( period = 10.175 ns )                    ; chufa:tmp0|cnt[8]  ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 9.466 ns                ;
+; N/A                                     ; 98.53 MHz ( period = 10.149 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 9.440 ns                ;
+; N/A                                     ; 98.53 MHz ( period = 10.149 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 9.440 ns                ;
+; N/A                                     ; 98.53 MHz ( period = 10.149 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 9.440 ns                ;
+; N/A                                     ; 98.53 MHz ( period = 10.149 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 9.440 ns                ;
+; N/A                                     ; 98.53 MHz ( period = 10.149 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 9.440 ns                ;
+; N/A                                     ; 98.53 MHz ( period = 10.149 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 9.440 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[14] ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[13] ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[15] ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.55 MHz ( period = 10.147 ns )                    ; chufa:tmp0|cnt[11] ; chufa:tmp0|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 9.438 ns                ;
+; N/A                                     ; 98.67 MHz ( period = 10.135 ns )                    ; chufa:tmp0|cnt[23] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 9.426 ns                ;
+; N/A                                     ; 98.67 MHz ( period = 10.135 ns )                    ; chufa:tmp0|cnt[23] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 9.426 ns                ;
+; N/A                                     ; 98.67 MHz ( period = 10.135 ns )                    ; chufa:tmp0|cnt[23] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 9.426 ns                ;
+; N/A                                     ; 98.78 MHz ( period = 10.123 ns )                    ; chufa:tmp0|cnt[23] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 9.414 ns                ;
+; N/A                                     ; 98.78 MHz ( period = 10.123 ns )                    ; chufa:tmp0|cnt[23] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 9.414 ns                ;
+; N/A                                     ; 98.78 MHz ( period = 10.123 ns )                    ; chufa:tmp0|cnt[23] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 9.414 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[14] ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[13] ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[15] ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; chufa:tmp0|cnt[20] ; chufa:tmp0|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 9.404 ns                ;
+; N/A                                     ; 98.89 MHz ( period = 10.112 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 9.403 ns                ;
+; N/A                                     ; 98.89 MHz ( period = 10.112 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 9.403 ns                ;
+; N/A                                     ; 98.89 MHz ( period = 10.112 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 9.403 ns                ;
+; N/A                                     ; 98.89 MHz ( period = 10.112 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 9.403 ns                ;
+; N/A                                     ; 98.89 MHz ( period = 10.112 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 9.403 ns                ;
+; N/A                                     ; 98.89 MHz ( period = 10.112 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 9.403 ns                ;
+; N/A                                     ; 99.19 MHz ( period = 10.082 ns )                    ; chufa:tmp0|cnt[14] ; chufa:tmp0|ten[2]  ; clk        ; clk      ; None                        ; None                      ; 9.373 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[14] ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[13] ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[10] ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[12] ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[11] ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[15] ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[9]  ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[8]  ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[7]  ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.25 MHz ( period = 10.076 ns )                    ; chufa:tmp0|cnt[21] ; chufa:tmp0|cnt[6]  ; clk        ; clk      ; None                        ; None                      ; 9.367 ns                ;
+; N/A                                     ; 99.30 MHz ( period = 10.071 ns )                    ; chufa:tmp0|cnt[13] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 9.362 ns                ;
+; N/A                                     ; 99.30 MHz ( period = 10.071 ns )                    ; chufa:tmp0|cnt[13] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 9.362 ns                ;
+; N/A                                     ; 99.30 MHz ( period = 10.071 ns )                    ; chufa:tmp0|cnt[13] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 9.362 ns                ;
+; N/A                                     ; 99.41 MHz ( period = 10.059 ns )                    ; chufa:tmp0|cnt[13] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 9.350 ns                ;
+; N/A                                     ; 99.41 MHz ( period = 10.059 ns )                    ; chufa:tmp0|cnt[13] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 9.350 ns                ;
+; N/A                                     ; 99.41 MHz ( period = 10.059 ns )                    ; chufa:tmp0|cnt[13] ; chufa:tmp0|one[2]  ; clk        ; clk      ; None                        ; None                      ; 9.350 ns                ;
+; N/A                                     ; 99.57 MHz ( period = 10.043 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|cnt[5]  ; clk        ; clk      ; None                        ; None                      ; 9.334 ns                ;
+; N/A                                     ; 99.57 MHz ( period = 10.043 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|cnt[1]  ; clk        ; clk      ; None                        ; None                      ; 9.334 ns                ;
+; N/A                                     ; 99.57 MHz ( period = 10.043 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|cnt[0]  ; clk        ; clk      ; None                        ; None                      ; 9.334 ns                ;
+; N/A                                     ; 99.57 MHz ( period = 10.043 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|cnt[2]  ; clk        ; clk      ; None                        ; None                      ; 9.334 ns                ;
+; N/A                                     ; 99.57 MHz ( period = 10.043 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|cnt[3]  ; clk        ; clk      ; None                        ; None                      ; 9.334 ns                ;
+; N/A                                     ; 99.57 MHz ( period = 10.043 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|cnt[4]  ; clk        ; clk      ; None                        ; None                      ; 9.334 ns                ;
+; N/A                                     ; 99.79 MHz ( period = 10.021 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|ten[0]  ; clk        ; clk      ; None                        ; None                      ; 9.312 ns                ;
+; N/A                                     ; 99.79 MHz ( period = 10.021 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|ten[1]  ; clk        ; clk      ; None                        ; None                      ; 9.312 ns                ;
+; N/A                                     ; 99.79 MHz ( period = 10.021 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|ten[3]  ; clk        ; clk      ; None                        ; None                      ; 9.312 ns                ;
+; N/A                                     ; 99.91 MHz ( period = 10.009 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|one[0]  ; clk        ; clk      ; None                        ; None                      ; 9.300 ns                ;
+; N/A                                     ; 99.91 MHz ( period = 10.009 ns )                    ; chufa:tmp0|cnt[25] ; chufa:tmp0|one[1]  ; clk        ; clk      ; None                        ; None                      ; 9.300 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                    ;                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------+
+; tsu                                                                       ;
++-------+--------------+------------+-------+--------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                 ; To Clock ;
++-------+--------------+------------+-------+--------------------+----------+
+; N/A   ; None         ; 4.442 ns   ; pause ; chufa:tmp0|ten[0]  ; clk      ;
+; N/A   ; None         ; 4.442 ns   ; pause ; chufa:tmp0|ten[1]  ; clk      ;
+; N/A   ; None         ; 4.442 ns   ; pause ; chufa:tmp0|ten[3]  ; clk      ;
+; N/A   ; None         ; 4.430 ns   ; pause ; chufa:tmp0|one[0]  ; clk      ;
+; N/A   ; None         ; 4.430 ns   ; pause ; chufa:tmp0|one[1]  ; clk      ;
+; N/A   ; None         ; 4.430 ns   ; pause ; chufa:tmp0|one[2]  ; clk      ;
+; N/A   ; None         ; 4.295 ns   ; mode  ; chufa:tmp0|ten[0]  ; clk      ;
+; N/A   ; None         ; 4.295 ns   ; mode  ; chufa:tmp0|ten[1]  ; clk      ;
+; N/A   ; None         ; 4.295 ns   ; mode  ; chufa:tmp0|ten[3]  ; clk      ;
+; N/A   ; None         ; 4.283 ns   ; mode  ; chufa:tmp0|one[0]  ; clk      ;
+; N/A   ; None         ; 4.283 ns   ; mode  ; chufa:tmp0|one[1]  ; clk      ;
+; N/A   ; None         ; 4.283 ns   ; mode  ; chufa:tmp0|one[2]  ; clk      ;
+; N/A   ; None         ; 4.201 ns   ; mode  ; chufa:tmp0|cnt[31] ; clk      ;
+; N/A   ; None         ; 4.201 ns   ; mode  ; chufa:tmp0|cnt[26] ; clk      ;
+; N/A   ; None         ; 4.201 ns   ; mode  ; chufa:tmp0|cnt[27] ; clk      ;
+; N/A   ; None         ; 4.201 ns   ; mode  ; chufa:tmp0|cnt[28] ; clk      ;
+; N/A   ; None         ; 4.201 ns   ; mode  ; chufa:tmp0|cnt[29] ; clk      ;
+; N/A   ; None         ; 4.201 ns   ; mode  ; chufa:tmp0|cnt[30] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[24] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[23] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[20] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[22] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[21] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[25] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[16] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[17] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[19] ; clk      ;
+; N/A   ; None         ; 4.163 ns   ; mode  ; chufa:tmp0|cnt[18] ; clk      ;
+; N/A   ; None         ; 3.921 ns   ; pause ; chufa:tmp0|ten[2]  ; clk      ;
+; N/A   ; None         ; 3.794 ns   ; pause ; chufa:tmp0|cnt[31] ; clk      ;
+; N/A   ; None         ; 3.794 ns   ; pause ; chufa:tmp0|cnt[26] ; clk      ;
+; N/A   ; None         ; 3.794 ns   ; pause ; chufa:tmp0|cnt[27] ; clk      ;
+; N/A   ; None         ; 3.794 ns   ; pause ; chufa:tmp0|cnt[28] ; clk      ;
+; N/A   ; None         ; 3.794 ns   ; pause ; chufa:tmp0|cnt[29] ; clk      ;
+; N/A   ; None         ; 3.794 ns   ; pause ; chufa:tmp0|cnt[30] ; clk      ;
+; N/A   ; None         ; 3.774 ns   ; mode  ; chufa:tmp0|ten[2]  ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[24] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[23] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[20] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[22] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[21] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[25] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[16] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[17] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[19] ; clk      ;
+; N/A   ; None         ; 3.756 ns   ; pause ; chufa:tmp0|cnt[18] ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[14] ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[13] ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[10] ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[12] ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[11] ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[15] ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[9]  ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[8]  ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[7]  ; clk      ;
+; N/A   ; None         ; 3.598 ns   ; mode  ; chufa:tmp0|cnt[6]  ; clk      ;
+; N/A   ; None         ; 3.199 ns   ; mode  ; chufa:tmp0|cnt[5]  ; clk      ;
+; N/A   ; None         ; 3.199 ns   ; mode  ; chufa:tmp0|cnt[1]  ; clk      ;
+; N/A   ; None         ; 3.199 ns   ; mode  ; chufa:tmp0|cnt[0]  ; clk      ;
+; N/A   ; None         ; 3.199 ns   ; mode  ; chufa:tmp0|cnt[2]  ; clk      ;
+; N/A   ; None         ; 3.199 ns   ; mode  ; chufa:tmp0|cnt[3]  ; clk      ;
+; N/A   ; None         ; 3.199 ns   ; mode  ; chufa:tmp0|cnt[4]  ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[14] ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[13] ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[10] ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[12] ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[11] ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[15] ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[9]  ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[8]  ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[7]  ; clk      ;
+; N/A   ; None         ; 3.191 ns   ; pause ; chufa:tmp0|cnt[6]  ; clk      ;
+; N/A   ; None         ; 2.883 ns   ; pause ; chufa:tmp0|one[3]  ; clk      ;
+; N/A   ; None         ; 2.792 ns   ; pause ; chufa:tmp0|cnt[5]  ; clk      ;
+; N/A   ; None         ; 2.792 ns   ; pause ; chufa:tmp0|cnt[1]  ; clk      ;
+; N/A   ; None         ; 2.792 ns   ; pause ; chufa:tmp0|cnt[0]  ; clk      ;
+; N/A   ; None         ; 2.792 ns   ; pause ; chufa:tmp0|cnt[2]  ; clk      ;
+; N/A   ; None         ; 2.792 ns   ; pause ; chufa:tmp0|cnt[3]  ; clk      ;
+; N/A   ; None         ; 2.792 ns   ; pause ; chufa:tmp0|cnt[4]  ; clk      ;
+; N/A   ; None         ; 2.736 ns   ; mode  ; chufa:tmp0|one[3]  ; clk      ;
++-------+--------------+------------+-------+--------------------+----------+
+
+
++-----------------------------------------------------------------------------+
+; tco                                                                         ;
++-------+--------------+------------+-------------------+--------+------------+
+; Slack ; Required tco ; Actual tco ; From              ; To     ; From Clock ;
++-------+--------------+------------+-------------------+--------+------------+
+; N/A   ; None         ; 11.660 ns  ; chufa:tmp0|ten[0] ; ll[3]  ; clk        ;
+; N/A   ; None         ; 11.432 ns  ; chufa:tmp0|ten[0] ; ll[6]  ; clk        ;
+; N/A   ; None         ; 11.369 ns  ; chufa:tmp0|ten[2] ; ll[6]  ; clk        ;
+; N/A   ; None         ; 11.277 ns  ; chufa:tmp0|ten[0] ; ll[2]  ; clk        ;
+; N/A   ; None         ; 11.240 ns  ; chufa:tmp0|ten[2] ; ll[3]  ; clk        ;
+; N/A   ; None         ; 11.185 ns  ; chufa:tmp0|ten[0] ; ll[4]  ; clk        ;
+; N/A   ; None         ; 11.131 ns  ; chufa:tmp0|ten[0] ; ll[5]  ; clk        ;
+; N/A   ; None         ; 11.107 ns  ; chufa:tmp0|ten[0] ; ll[1]  ; clk        ;
+; N/A   ; None         ; 11.100 ns  ; chufa:tmp0|ten[3] ; ll[6]  ; clk        ;
+; N/A   ; None         ; 11.004 ns  ; chufa:tmp0|ten[3] ; ll[3]  ; clk        ;
+; N/A   ; None         ; 10.986 ns  ; chufa:tmp0|ten[0] ; ll[0]  ; clk        ;
+; N/A   ; None         ; 10.866 ns  ; chufa:tmp0|one[0] ; hh[2]  ; clk        ;
+; N/A   ; None         ; 10.857 ns  ; chufa:tmp0|ten[2] ; ll[2]  ; clk        ;
+; N/A   ; None         ; 10.812 ns  ; chufa:tmp0|one[0] ; hh[3]  ; clk        ;
+; N/A   ; None         ; 10.771 ns  ; chufa:tmp0|one[1] ; hh[2]  ; clk        ;
+; N/A   ; None         ; 10.765 ns  ; chufa:tmp0|ten[2] ; ll[4]  ; clk        ;
+; N/A   ; None         ; 10.746 ns  ; chufa:tmp0|ten[1] ; ll[6]  ; clk        ;
+; N/A   ; None         ; 10.721 ns  ; chufa:tmp0|ten[2] ; ll[5]  ; clk        ;
+; N/A   ; None         ; 10.719 ns  ; chufa:tmp0|one[1] ; hh[3]  ; clk        ;
+; N/A   ; None         ; 10.706 ns  ; chufa:tmp0|one[0] ; hh[6]  ; clk        ;
+; N/A   ; None         ; 10.705 ns  ; chufa:tmp0|one[0] ; hh[5]  ; clk        ;
+; N/A   ; None         ; 10.704 ns  ; chufa:tmp0|ten[2] ; ll[1]  ; clk        ;
+; N/A   ; None         ; 10.687 ns  ; chufa:tmp0|one[0] ; hh[4]  ; clk        ;
+; N/A   ; None         ; 10.626 ns  ; chufa:tmp0|one[3] ; hh[2]  ; clk        ;
+; N/A   ; None         ; 10.620 ns  ; chufa:tmp0|ten[3] ; ll[2]  ; clk        ;
+; N/A   ; None         ; 10.574 ns  ; chufa:tmp0|one[3] ; hh[3]  ; clk        ;
+; N/A   ; None         ; 10.566 ns  ; chufa:tmp0|ten[2] ; ll[0]  ; clk        ;
+; N/A   ; None         ; 10.529 ns  ; chufa:tmp0|ten[3] ; ll[4]  ; clk        ;
+; N/A   ; None         ; 10.502 ns  ; chufa:tmp0|ten[1] ; ll[3]  ; clk        ;
+; N/A   ; None         ; 10.475 ns  ; chufa:tmp0|ten[3] ; ll[5]  ; clk        ;
+; N/A   ; None         ; 10.444 ns  ; chufa:tmp0|ten[3] ; ll[1]  ; clk        ;
+; N/A   ; None         ; 10.385 ns  ; chufa:tmp0|one[2] ; hh[0]  ; clk        ;
+; N/A   ; None         ; 10.340 ns  ; chufa:tmp0|one[2] ; hh[1]  ; clk        ;
+; N/A   ; None         ; 10.330 ns  ; chufa:tmp0|ten[3] ; ll[0]  ; clk        ;
+; N/A   ; None         ; 10.220 ns  ; chufa:tmp0|one[0] ; hh[0]  ; clk        ;
+; N/A   ; None         ; 10.203 ns  ; chufa:tmp0|one[3] ; hh[6]  ; clk        ;
+; N/A   ; None         ; 10.198 ns  ; chufa:tmp0|one[3] ; hh[5]  ; clk        ;
+; N/A   ; None         ; 10.193 ns  ; chufa:tmp0|one[3] ; hh[4]  ; clk        ;
+; N/A   ; None         ; 10.164 ns  ; chufa:tmp0|one[0] ; hh[1]  ; clk        ;
+; N/A   ; None         ; 10.153 ns  ; chufa:tmp0|one[2] ; hh[2]  ; clk        ;
+; N/A   ; None         ; 10.126 ns  ; chufa:tmp0|one[2] ; hh[6]  ; clk        ;
+; N/A   ; None         ; 10.121 ns  ; chufa:tmp0|one[2] ; hh[5]  ; clk        ;
+; N/A   ; None         ; 10.117 ns  ; chufa:tmp0|ten[1] ; ll[2]  ; clk        ;
+; N/A   ; None         ; 10.114 ns  ; chufa:tmp0|one[2] ; hh[4]  ; clk        ;
+; N/A   ; None         ; 10.101 ns  ; chufa:tmp0|one[2] ; hh[3]  ; clk        ;
+; N/A   ; None         ; 10.044 ns  ; chufa:tmp0|one[1] ; hh[0]  ; clk        ;
+; N/A   ; None         ; 10.026 ns  ; chufa:tmp0|ten[1] ; ll[4]  ; clk        ;
+; N/A   ; None         ; 10.000 ns  ; chufa:tmp0|one[1] ; hh[1]  ; clk        ;
+; N/A   ; None         ; 9.974 ns   ; chufa:tmp0|ten[1] ; ll[5]  ; clk        ;
+; N/A   ; None         ; 9.954 ns   ; chufa:tmp0|ten[1] ; ll[1]  ; clk        ;
+; N/A   ; None         ; 9.834 ns   ; chufa:tmp0|one[1] ; hh[6]  ; clk        ;
+; N/A   ; None         ; 9.828 ns   ; chufa:tmp0|one[1] ; hh[5]  ; clk        ;
+; N/A   ; None         ; 9.827 ns   ; chufa:tmp0|ten[1] ; ll[0]  ; clk        ;
+; N/A   ; None         ; 9.824 ns   ; chufa:tmp0|one[1] ; hh[4]  ; clk        ;
+; N/A   ; None         ; 9.658 ns   ; chufa:tmp0|one[3] ; hh[0]  ; clk        ;
+; N/A   ; None         ; 9.613 ns   ; chufa:tmp0|one[3] ; hh[1]  ; clk        ;
+; N/A   ; None         ; 9.199 ns   ; chufa:tmp0|ten[2] ; ten[2] ; clk        ;
+; N/A   ; None         ; 8.867 ns   ; chufa:tmp0|ten[0] ; ten[0] ; clk        ;
+; N/A   ; None         ; 8.716 ns   ; chufa:tmp0|ten[1] ; ten[1] ; clk        ;
+; N/A   ; None         ; 8.312 ns   ; chufa:tmp0|one[0] ; one[0] ; clk        ;
+; N/A   ; None         ; 8.060 ns   ; chufa:tmp0|ten[3] ; ten[3] ; clk        ;
+; N/A   ; None         ; 8.047 ns   ; chufa:tmp0|one[3] ; one[3] ; clk        ;
+; N/A   ; None         ; 7.919 ns   ; chufa:tmp0|one[2] ; one[2] ; clk        ;
+; N/A   ; None         ; 6.840 ns   ; chufa:tmp0|one[1] ; one[1] ; clk        ;
++-------+--------------+------------+-------------------+--------+------------+
+
+
++---------------------------------------------------------------------------------+
+; th                                                                              ;
++---------------+-------------+-----------+-------+--------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                 ; To Clock ;
++---------------+-------------+-----------+-------+--------------------+----------+
+; N/A           ; None        ; -2.182 ns ; mode  ; chufa:tmp0|one[3]  ; clk      ;
+; N/A           ; None        ; -2.238 ns ; pause ; chufa:tmp0|cnt[5]  ; clk      ;
+; N/A           ; None        ; -2.238 ns ; pause ; chufa:tmp0|cnt[1]  ; clk      ;
+; N/A           ; None        ; -2.238 ns ; pause ; chufa:tmp0|cnt[0]  ; clk      ;
+; N/A           ; None        ; -2.238 ns ; pause ; chufa:tmp0|cnt[2]  ; clk      ;
+; N/A           ; None        ; -2.238 ns ; pause ; chufa:tmp0|cnt[3]  ; clk      ;
+; N/A           ; None        ; -2.238 ns ; pause ; chufa:tmp0|cnt[4]  ; clk      ;
+; N/A           ; None        ; -2.329 ns ; pause ; chufa:tmp0|one[3]  ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[14] ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[13] ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[10] ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[12] ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[11] ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[15] ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[9]  ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[8]  ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[7]  ; clk      ;
+; N/A           ; None        ; -2.637 ns ; pause ; chufa:tmp0|cnt[6]  ; clk      ;
+; N/A           ; None        ; -2.645 ns ; mode  ; chufa:tmp0|cnt[5]  ; clk      ;
+; N/A           ; None        ; -2.645 ns ; mode  ; chufa:tmp0|cnt[1]  ; clk      ;
+; N/A           ; None        ; -2.645 ns ; mode  ; chufa:tmp0|cnt[0]  ; clk      ;
+; N/A           ; None        ; -2.645 ns ; mode  ; chufa:tmp0|cnt[2]  ; clk      ;
+; N/A           ; None        ; -2.645 ns ; mode  ; chufa:tmp0|cnt[3]  ; clk      ;
+; N/A           ; None        ; -2.645 ns ; mode  ; chufa:tmp0|cnt[4]  ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[14] ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[13] ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[10] ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[12] ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[11] ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[15] ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[9]  ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[8]  ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[7]  ; clk      ;
+; N/A           ; None        ; -3.044 ns ; mode  ; chufa:tmp0|cnt[6]  ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[24] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[23] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[20] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[22] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[21] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[25] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[16] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[17] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[19] ; clk      ;
+; N/A           ; None        ; -3.202 ns ; pause ; chufa:tmp0|cnt[18] ; clk      ;
+; N/A           ; None        ; -3.220 ns ; mode  ; chufa:tmp0|ten[2]  ; clk      ;
+; N/A           ; None        ; -3.240 ns ; pause ; chufa:tmp0|cnt[31] ; clk      ;
+; N/A           ; None        ; -3.240 ns ; pause ; chufa:tmp0|cnt[26] ; clk      ;
+; N/A           ; None        ; -3.240 ns ; pause ; chufa:tmp0|cnt[27] ; clk      ;
+; N/A           ; None        ; -3.240 ns ; pause ; chufa:tmp0|cnt[28] ; clk      ;
+; N/A           ; None        ; -3.240 ns ; pause ; chufa:tmp0|cnt[29] ; clk      ;
+; N/A           ; None        ; -3.240 ns ; pause ; chufa:tmp0|cnt[30] ; clk      ;
+; N/A           ; None        ; -3.367 ns ; pause ; chufa:tmp0|ten[2]  ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[24] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[23] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[20] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[22] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[21] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[25] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[16] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[17] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[19] ; clk      ;
+; N/A           ; None        ; -3.609 ns ; mode  ; chufa:tmp0|cnt[18] ; clk      ;
+; N/A           ; None        ; -3.647 ns ; mode  ; chufa:tmp0|cnt[31] ; clk      ;
+; N/A           ; None        ; -3.647 ns ; mode  ; chufa:tmp0|cnt[26] ; clk      ;
+; N/A           ; None        ; -3.647 ns ; mode  ; chufa:tmp0|cnt[27] ; clk      ;
+; N/A           ; None        ; -3.647 ns ; mode  ; chufa:tmp0|cnt[28] ; clk      ;
+; N/A           ; None        ; -3.647 ns ; mode  ; chufa:tmp0|cnt[29] ; clk      ;
+; N/A           ; None        ; -3.647 ns ; mode  ; chufa:tmp0|cnt[30] ; clk      ;
+; N/A           ; None        ; -3.729 ns ; mode  ; chufa:tmp0|one[0]  ; clk      ;
+; N/A           ; None        ; -3.729 ns ; mode  ; chufa:tmp0|one[1]  ; clk      ;
+; N/A           ; None        ; -3.729 ns ; mode  ; chufa:tmp0|one[2]  ; clk      ;
+; N/A           ; None        ; -3.741 ns ; mode  ; chufa:tmp0|ten[0]  ; clk      ;
+; N/A           ; None        ; -3.741 ns ; mode  ; chufa:tmp0|ten[1]  ; clk      ;
+; N/A           ; None        ; -3.741 ns ; mode  ; chufa:tmp0|ten[3]  ; clk      ;
+; N/A           ; None        ; -3.876 ns ; pause ; chufa:tmp0|one[0]  ; clk      ;
+; N/A           ; None        ; -3.876 ns ; pause ; chufa:tmp0|one[1]  ; clk      ;
+; N/A           ; None        ; -3.876 ns ; pause ; chufa:tmp0|one[2]  ; clk      ;
+; N/A           ; None        ; -3.888 ns ; pause ; chufa:tmp0|ten[0]  ; clk      ;
+; N/A           ; None        ; -3.888 ns ; pause ; chufa:tmp0|ten[1]  ; clk      ;
+; N/A           ; None        ; -3.888 ns ; pause ; chufa:tmp0|ten[3]  ; clk      ;
++---------------+-------------+-----------+-------+--------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue May 07 21:05:22 2019
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off counter -c counter
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 87.37 MHz between source register "chufa:tmp0|cnt[12]" and destination register "chufa:tmp0|ten[0]" (period= 11.445 ns)
+    Info: + Longest register to register delay is 10.736 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y2_N6; Fanout = 4; REG Node = 'chufa:tmp0|cnt[12]'
+        Info: 2: + IC(2.054 ns) + CELL(0.740 ns) = 2.794 ns; Loc. = LC_X6_Y3_N5; Fanout = 2; COMB Node = 'chufa:tmp0|Equal0~4'
+        Info: 3: + IC(2.471 ns) + CELL(0.200 ns) = 5.465 ns; Loc. = LC_X4_Y2_N1; Fanout = 1; COMB Node = 'chufa:tmp0|Equal0~6'
+        Info: 4: + IC(0.305 ns) + CELL(0.200 ns) = 5.970 ns; Loc. = LC_X4_Y2_N2; Fanout = 1; COMB Node = 'chufa:tmp0|Equal0~10'
+        Info: 5: + IC(1.680 ns) + CELL(0.200 ns) = 7.850 ns; Loc. = LC_X3_Y1_N1; Fanout = 6; COMB Node = 'chufa:tmp0|ten[0]~8'
+        Info: 6: + IC(1.643 ns) + CELL(1.243 ns) = 10.736 ns; Loc. = LC_X5_Y1_N2; Fanout = 13; REG Node = 'chufa:tmp0|ten[0]'
+        Info: Total cell delay = 2.583 ns ( 24.06 % )
+        Info: Total interconnect delay = 8.153 ns ( 75.94 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 3.348 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 40; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X5_Y1_N2; Fanout = 13; REG Node = 'chufa:tmp0|ten[0]'
+            Info: Total cell delay = 2.081 ns ( 62.16 % )
+            Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+        Info: - Longest clock path from clock "clk" to source register is 3.348 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 40; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X5_Y2_N6; Fanout = 4; REG Node = 'chufa:tmp0|cnt[12]'
+            Info: Total cell delay = 2.081 ns ( 62.16 % )
+            Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "chufa:tmp0|ten[0]" (data pin = "pause", clock pin = "clk") is 4.442 ns
+    Info: + Longest pin to register delay is 7.457 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_8; Fanout = 2; PIN Node = 'pause'
+        Info: 2: + IC(2.525 ns) + CELL(0.914 ns) = 4.571 ns; Loc. = LC_X3_Y1_N1; Fanout = 6; COMB Node = 'chufa:tmp0|ten[0]~8'
+        Info: 3: + IC(1.643 ns) + CELL(1.243 ns) = 7.457 ns; Loc. = LC_X5_Y1_N2; Fanout = 13; REG Node = 'chufa:tmp0|ten[0]'
+        Info: Total cell delay = 3.289 ns ( 44.11 % )
+        Info: Total interconnect delay = 4.168 ns ( 55.89 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 40; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X5_Y1_N2; Fanout = 13; REG Node = 'chufa:tmp0|ten[0]'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+Info: tco from clock "clk" to destination pin "ll[3]" through register "chufa:tmp0|ten[0]" is 11.660 ns
+    Info: + Longest clock path from clock "clk" to source register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 40; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X5_Y1_N2; Fanout = 13; REG Node = 'chufa:tmp0|ten[0]'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 7.936 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y1_N2; Fanout = 13; REG Node = 'chufa:tmp0|ten[0]'
+        Info: 2: + IC(1.505 ns) + CELL(0.914 ns) = 2.419 ns; Loc. = LC_X5_Y1_N8; Fanout = 1; COMB Node = 'trans:tmp1|Mux3~0'
+        Info: 3: + IC(3.195 ns) + CELL(2.322 ns) = 7.936 ns; Loc. = PIN_4; Fanout = 0; PIN Node = 'll[3]'
+        Info: Total cell delay = 3.236 ns ( 40.78 % )
+        Info: Total interconnect delay = 4.700 ns ( 59.22 % )
+Info: th for register "chufa:tmp0|one[3]" (data pin = "mode", clock pin = "clk") is -2.182 ns
+    Info: + Longest clock path from clock "clk" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 40; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X3_Y1_N8; Fanout = 11; REG Node = 'chufa:tmp0|one[3]'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.751 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_21; Fanout = 2; PIN Node = 'mode'
+        Info: 2: + IC(2.552 ns) + CELL(0.740 ns) = 4.424 ns; Loc. = LC_X3_Y1_N1; Fanout = 6; COMB Node = 'chufa:tmp0|ten[0]~8'
+        Info: 3: + IC(0.736 ns) + CELL(0.591 ns) = 5.751 ns; Loc. = LC_X3_Y1_N8; Fanout = 11; REG Node = 'chufa:tmp0|one[3]'
+        Info: Total cell delay = 2.463 ns ( 42.83 % )
+        Info: Total interconnect delay = 3.288 ns ( 57.17 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 213 megabytes
+    Info: Processing ended: Tue May 07 21:05:22 2019
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
